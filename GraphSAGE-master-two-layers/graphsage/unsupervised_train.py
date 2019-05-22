@@ -189,8 +189,7 @@ def train(train_data, test_data=None):
     elif FLAGS.model == 'graphsage_seq':
         sampler = UniformNeighborSampler(adj_info)
         layer_infos = [SAGEInfo("node", sampler, FLAGS.samples_1, FLAGS.dim_1),
-                            SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2),
-                                SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2)]
+                            SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2)]
 
         model = SampleAndAggregate(placeholders, 
                                      features,
@@ -205,8 +204,7 @@ def train(train_data, test_data=None):
     elif FLAGS.model == 'graphsage_maxpool':
         sampler = UniformNeighborSampler(adj_info)
         layer_infos = [SAGEInfo("node", sampler, FLAGS.samples_1, FLAGS.dim_1),
-                            SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2),
-                                SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2)]
+                            SAGEInfo("node", sampler, FLAGS.samples_2, FLAGS.dim_2)]
 
         model = SampleAndAggregate(placeholders, 
                                     features,

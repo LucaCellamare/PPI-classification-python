@@ -146,12 +146,7 @@ class MLP(Model):
                                  dropout=self.placeholders['dropout'],
                                  logging=self.logging))
 
-        self.layers.append(layers.Dense(input_dim=self.output_dim1,
-                                 output_dim=self.output_dim,
-                                 act=lambda x: x,
-                                 dropout=self.placeholders['dropout'],
-                                 logging=self.logging))
-
+      
     def predict(self):
         return tf.nn.softmax(self.outputs)
 
